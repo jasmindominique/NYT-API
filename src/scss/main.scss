@@ -1,0 +1,144 @@
+/* 
+==============================================
+CONTENT:	Project Name Here
+AUTHOR:		Your Name Here
+==============================================
+
+TABLE OF CONTENTS:
+
+0. Reset
+1. Main Layout
+2. Content
+
+==============================================
+*/
+
+/* 0. Reset ================================= */
+@import 'reset';
+
+
+/* 1. Main Layout ================================= */
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: #fff;
+}
+
+
+
+
+/* 2. Content ================================= */
+
+header{
+
+	display: flex;
+	justify-content: space-between;
+
+		img{
+			margin: 20px;
+		}
+	}
+
+form{
+	text-align: center;
+}
+
+.floating-box {
+	position: relative;
+	font-family: sans-serif;
+	width: 90%;
+	max-width: 500px;
+	margin: 100px auto;
+	padding: 30px 20px 30px 30px;
+	.foreground {
+		position: relative;
+		z-index: 2;
+		transform: translateZ(100px);
+	}
+	.background {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+		background: white;
+		z-index: 1;
+		// perspective: 2000px;
+		transition: 0.2s;
+		transform: translateX(20px) perspective(600px) rotateY(15deg);
+	}
+	&:hover .background {
+		transform: translateX(-30px) perspective(600px) rotateY(-15deg);		
+	}
+	.logo {
+		position: absolute;
+		top: -30px;
+		width: 60px;
+		z-index: 2;
+		transform: translateZ(100px);
+		transition: 0.3s;
+
+		&:hover {
+			transform: rotate(-0.4turn)
+		}
+	}
+	h1 {
+		font-weight: 700;
+		font-size: 22pt;
+	    margin-bottom: 25px;
+		color: slategray;
+		text-align: center;
+	}
+	p {
+		color: #777;
+		// margin: 10px 0;
+		line-height: 140%;
+	}
+	p.github {
+		font-size: 0.8em;
+		
+		a {
+			opacity: 0.2;
+			transition: 0.3s;
+			&:hover {
+				opacity: 1;
+				color: red;
+			}
+		}
+	}
+
+	img{
+	    height: 80px;
+	    margin-bottom: 45px;
+	    padding: 10px;
+	    background: darkgoldenrod;
+	}
+
+	label{
+	    color: slategray;
+	    display: flex;
+	    flex-direction: column;
+	    text-align: center;
+	    font-size: 1.2rem;
+	    font-weight: bold;
+	    line-height: 1.5;
+
+		}
+
+	button{
+		font-size: 13px;
+		color: cadetBlue;
+		margin-top: 10px;
+		padding: 7px;
+	    border-radius: 8px;
+	    width: 55px;
+	}
+
+	input{
+		height: 30px;
+		font-size: 1.2rem;
+	}
+}
